@@ -46,6 +46,7 @@
     <Compile Include="BankSystem.cs" />
     <Compile Include="Module\AccountModule.cs" />
     <Compile Include="Module\LoginModule.cs" />
+    <Compile Include="Module\SettingsModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

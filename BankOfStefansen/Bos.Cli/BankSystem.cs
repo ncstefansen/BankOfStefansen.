@@ -22,12 +22,6 @@ namespace Bos.Cli
             // Log The User In Before Use
             LoginModule logingModule = new LoginModule();
             logingModule.Login();
-            Console.Clear();
-
-            Console.WriteLine("#==== Bank Of Stefansen ====#");
-            Console.WriteLine("    Administration Panel.");
-            Console.WriteLine();
-            Console.WriteLine("Welcome To The Bank Of Stefansen.");
         }
 
         public void HandleInput()
@@ -38,11 +32,13 @@ namespace Bos.Cli
             {
                 if (line == "account")
                 {
-                    Console.WriteLine("Niko");
+                    AccountModule accountModule = new AccountModule();
+                    accountModule.Start();
                 }
                 else if (line == "settings")
                 {
-                    Console.WriteLine("There is no settings!! HAHAHAHA");
+                    SettingsModule settingsModule = new SettingsModule();
+                    settingsModule.Start();
                 }
                 else if (line == "logout")
                 {
@@ -51,14 +47,22 @@ namespace Bos.Cli
                 else
                 {
                     Console.WriteLine("The command does not exist.");
-                    PrintMenu();
                 }
+
+                PrintMenu();
             }
         }
 
         public void PrintMenu()
         {
+            Console.Clear();
+
+            Console.WriteLine("#==== Bank Of Stefansen ====#");
+            Console.WriteLine("    Administration Panel.");
             Console.WriteLine();
+            Console.WriteLine("Welcome To The Bank Of Stefansen.");
+            Console.WriteLine();
+
             Console.WriteLine("Menu Options");
             Console.WriteLine(" - Account");
             Console.WriteLine(" - Settings");
